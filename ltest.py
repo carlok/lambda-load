@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import requests
 from requests.exceptions import HTTPError
 import urllib3
@@ -105,7 +106,7 @@ def lambda_graphql(data):
             'country': data,
         }
 
-        url = 'https://fhuiqynn9i.execute-api.eu-west-1.amazonaws.com/dev/graphql/'
+        url = os.environ["GQL_SAME"]
 
         response = requests.post(
             url,
