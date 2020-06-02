@@ -1,0 +1,15 @@
+{
+    "kProtocol": "http",
+    "requestContext": {
+        "domainName": "localhost:3000",
+        "path": "/0.1.0/functions/kf-lambda-load-test01-dev-reporter/invocations",
+        "stage": "0.1.0"
+    },
+    "body": {
+        "action": "spawn",
+        "bunch": {
+            "size": 10,
+            "data": ["FR", "FR", "FR", "FR", "FR", "FR", "FR", "FR", "FR", "FR"]
+        }
+    }
+}

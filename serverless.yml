@@ -1,0 +1,35 @@
+service: kf-lambda-load-test01 # pair on package.json
+
+provider:
+  name: aws
+  runtime: python3.7
+  memorySize: 256 # optional, in MB, default is 1024
+  timeout: 30 # optional, in seconds, default is 6
+  # cfnRole: arn:aws:iam::000000000000:user/xxxxxxxxxxxx
+  region: eu-central-1
+  environment:
+    GQL_SAME: 'https://fhuiqynn9i.execute-api.eu-west-1.amazonaws.com/dev/graphql/'
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+functions:
+  graphql:
+    handler: ltest.graphql
+    package:
+      exclude:
+        - "rest_test/"
+    events:
+      - http:
+          path: graphql
+          method: post
+          cors: true
+  reporter:
+    handler: ltest.reporter
+    package:
+      exclude:
+        - "rest_test/"
+    events:
+      - http:
+          path: reporter
+          method: post
+          cors: true

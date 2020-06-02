@@ -1,0 +1,7 @@
+{
+    "action": "spawn",
+    "bunch": {
+        "size": 1,
+        "data": ["FR"]
+    }
+}
