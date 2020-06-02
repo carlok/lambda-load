@@ -8,7 +8,7 @@ provider:
   # cfnRole: arn:aws:iam::000000000000:user/xxxxxxxxxxxx
   region: eu-central-1
   environment:
-    GQL_SAME: 'https://fhuiqynn9i.execute-api.eu-west-1.amazonaws.com/dev/graphql/'
+    GQL_SAME: 'https://CUSTOM.execute-api.eu-west-1.amazonaws.com/dev/graphql/'
 plugins:
   - serverless-offline
   - serverless-python-requirements
